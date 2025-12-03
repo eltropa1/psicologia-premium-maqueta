@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maqueta Psicología Premium</title>
+
+    <!-- Fuentes elegantes -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Dancing+Script:wght@500;600&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --rosa-suave: #eac7d3;
+        --beige-crema: #f7f0ea;
+        --gris-claro: #e7e7e7;
+        --texto-oscuro: #2a2a2a;
+        --blanco: #ffffff;
+        --rosado-oscuro: #c49aa8;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: var(--beige-crema);
+        color: var(--texto-oscuro);
+        line-height: 1.6;
+      }
+
+      /* ---------------- HEADER (Desktop) ---------------- */
+      header {
+        background: linear-gradient(
+          90deg,
+          var(--rosa-suave),
+          var(--beige-crema)
+        );
+        padding: 20px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+
+      header h3 {
+        font-family: "Playfair Display", serif;
+        margin: 0;
+        font-size: 1.6rem;
+      }
+
+      nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: var(--texto-oscuro);
+        font-weight: 500;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        background-color: var(--rosado-oscuro);
+        color: var(--blanco);
+      }
+
+      /* ================= HERO DESKTOP ================= */
+      #hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 100px 20px;
+        background-image: url("https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?auto=format&fit=crop&w=1400&q=80");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      #hero::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(3px);
+      }
+
+      .hero-card {
+        position: relative;
+        background: white;
+        padding: 40px;
+        max-width: 550px;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        z-index: 2;
+      }
+
+      .hero-card h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        margin: 0 0 10px 0;
+      }
+
+      .btn-principal {
+        padding: 12px 25px;
+        border: none;
+        background-color: var(--rosa-suave);
+        color: var(--texto-oscuro);
+        border-radius: 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .btn-principal:hover {
+        background-color: var(--rosado-oscuro);
+        color: var(--blanco);
+      }
+
+      /* ================= SECCIONES ================= */
+      section {
+        padding: 80px 40px;
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      h2::after {
+        content: "";
+        width: 120px;
+        height: 14px;
+        background: url("data:image/svg+xml;utf8,<svg ... ></svg>") no-repeat center;
+
+        background-size: contain;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -12px;
+        opacity: 0.8;
+      }
+
+      /* ================= SOBRE MÍ ================= */
+      #sobre-mi {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+        padding-bottom: 60px;
+      }
+
+      #foto-psicologa {
+        width: 320px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        position: relative;
+        z-index: 2;
+      }
+
+      /* ================= SERVICIOS ================= */
+      .servicios-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .servicio-card {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .servicio-card:hover {
+        transform: translateY(-5px);
+      }
+
+      /* ================= TESTIMONIOS ================= */
+      .testimonios {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .testimonio {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        max-width: 350px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* ================= BLOG ================= */
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .post {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .post img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      /* ================= CONTACTO ================= */
+      form {
+        max-width: 500px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      input,
+      textarea {
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid var(--gris-claro);
+      }
+
+      /* ================= FOOTER ================= */
+      footer {
+        background: var(--rosa-suave);
+        padding: 30px;
+        text-align: center;
+      }
+
+      /* ================================================= */
+      /* ================= MOBILE VERSION ================= */
+      /* ================================================= */
+      @media (max-width: 768px) {
+        /* Ocultar hero completo */
+        #hero {
+          display: none !important;
+        }
+
+        /* Header NO visible en móvil */
+        header {
+          height: 0;
+          padding: 0;
+          background: none;
+          box-shadow: none;
+        }
+        header h3 {
+          display: none;
+        }
+        nav {
+          display: none;
+        }
+
+        /* Botón hamburguesa */
+        #hamburger {
+          display: block !important;
+          position: fixed;
+          top: 18px;
+          right: 18px;
+          z-index: 9999;
+          font-size: 36px;
+          background: rgba(255, 255, 255, 0.75);
+          padding: 10px 16px;
+          border-radius: 14px;
+          backdrop-filter: blur(6px);
+          cursor: pointer;
+        }
+
+        /* Menú deslizante */
+        nav {
+          display: none;
+          flex-direction: column;
+          gap: 22px;
+          position: fixed;
+          top: 80px;
+          right: 20px;
+          width: 65%;
+          background: white;
+          padding: 30px;
+          border-radius: 18px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+          z-index: 9998;
+        }
+
+        /* SOBRE MÍ → Foto primero */
+        #sobre-mi {
+          flex-direction: column;
+          padding-top: 60px;
+        }
+
+        #foto-psicologa {
+          width: 85%;
+          height: auto;
+          border-radius: 30px;
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+        }
+
+        /* Frase manuscrita encima de la foto */
+        #sobre-mi::before {
+          content: "Tu bienestar importa";
+          position: absolute;
+          bottom: 390px;
+          left: 50%;
+          transform: translateX(-50%) rotate(-15deg);
+          font-family: "Dancing Script", cursive;
+          font-size: 2.6rem;
+          color: var(--rosado-oscuro);
+          z-index: 5;
+        }
+        /* BLOQUE SUPERIOR MÓVIL CON NOMBRE */
+        .mobile-header-name {
+          text-align: center;
+          padding-top: 40px;
+          position: relative;
+          z-index: 10;
+        }
+
+        /* Nombre artístico */
+        .mobile-header-name .nombre-doctora {
+          font-family: "Dancing Script", cursive;
+          font-size: 2.8rem;
+          margin: 0;
+          color: var(--rosado-oscuro);
+          font-weight: 600;
+        }
+
+        /* Subtítulo pequeño */
+        .mobile-header-name .subtitulo-doctora {
+          font-family: "Playfair Display", serif;
+          font-size: 1rem;
+          margin-top: 5px;
+          color: #704c57; /* un tono más oscuro elegante */
+          opacity: 0.8;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h3>Psicología Premium</h3>
+      <nav>
+        <a href="#hero">Inicio</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#blog">Blog</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div id="hamburger" style="display: none">☰</div>
+    </header>
+
+    <!-- HERO solo en escritorio -->
+    <section id="hero">
+      <div class="hero-card">
+        <h1>Tu bienestar emocional empieza aquí</h1>
+        <p>
+          Acompañamiento psicológico profesional con un enfoque cálido, humano y
+          confidencial.
+        </p>
+        <button class="btn-principal">Reserva tu sesión</button>
+      </div>
+    </section>
+
+    <!-- Nombre doctora móvil -->
+    <div class="mobile-header-name">
+      <h1 class="nombre-doctora">María López</h1>
+      <p class="subtitulo-doctora">Psicóloga colegiada · XXX000</p>
+    </div>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi">
+      <img
+        src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80"
+        alt="Psicóloga"
+        id="foto-psicologa"
+      />
+
+      <div>
+        <h2>Sobre mí</h2>
+        <p>
+          Soy una profesional dedicada al bienestar emocional, con una visión
+          centrada en la empatía, la escucha activa y el crecimiento personal.
+          Mi consulta ofrece un espacio seguro donde explorar tus emociones.
+        </p>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <div class="servicios-grid">
+        <div class="servicio-card">
+          <h3>Terapia individual</h3>
+          <p>
+            Sesiones personalizadas para el manejo emocional, ansiedad y
+            crecimiento personal.
+          </p>
+        </div>
+        <div class="servicio-card">
+          <h3>Terapia de pareja</h3>
+          <p>
+            Recupera la armonía y comunicación con tu pareja en un entorno
+            profesional.
+          </p>
+        </div>
+        <div class="servicio-card">
+          <h3>Terapia online</h3>
+          <p>Acompañamiento terapéutico desde cualquier lugar del mundo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios">
+      <h2>Testimonios</h2>
+      <div class="testimonios">
+        <div class="testimonio">
+          “Gracias a su apoyo, aprendí a gestionar mi ansiedad y recuperar mi
+          vida.”
+        </div>
+        <div class="testimonio">
+          “Una profesional cálida, cercana y profundamente comprometida.”
+        </div>
+        <div class="testimonio">
+          “Me ayudó a encontrar claridad en un momento muy difícil.”
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog">
+      <h2>Blog</h2>
+      <div class="blog-grid">
+        <div class="post">
+          <img
+            src="https://images.unsplash.com/photo-1527236438218-d82077ae1f85?auto=format&fit=crop&w=800&q=80"
+          />
+          <div class="post-content">
+            <h3>Cómo manejar la ansiedad día a día</h3>
+            <p>Consejos prácticos para mejorar tu bienestar emocional.</p>
+          </div>
+        </div>
+
+        <div class="post">
+          <img
+            src="https://images.unsplash.com/photo-1527236438218-d82077ae1f85?auto=format&fit=crop&w=800&q=80"
+          />
+          <div class="post-content">
+            <h3>La importancia de la salud mental</h3>
+            <p>Reflexiones sobre bienestar, equilibrio y autocuidado.</p>
+          </div>
+        </div>
+
+        <div class="post">
+          <img
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80"
+          />
+          <div class="post-content">
+            <h3>Relaciones sanas</h3>
+            <p>Claves para construir vínculos más sólidos y conscientes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form>
+        <input type="text" placeholder="Tu nombre" />
+        <input type="email" placeholder="Tu correo" />
+        <textarea rows="5" placeholder="Mensaje"></textarea>
+        <button>Enviar</button>
+      </form>
+    </section>
+
+    <footer>© 2025 Psicología Premium — Todos los derechos reservados</footer>
+
+    <script>
+      // Scroll suave
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      // Menú hamburguesa funcional
+      const hamburger = document.getElementById("hamburger");
+      const nav = document.querySelector("header nav");
+
+      hamburger.addEventListener("click", () => {
+        if (nav.style.display === "flex") {
+          nav.style.display = "none";
+        } else {
+          nav.style.display = "flex";
+          nav.style.animation = "slideMenu 0.3s ease";
+        }
+      });
+      
+      // Cerrar menú hamburguesa al hacer clic en cualquier enlace
+      document.querySelectorAll("header nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.style.display = "none"; // Oculta el menú
+        });
+      });
+    </script>
+  </body>
+</html>
