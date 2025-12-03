@@ -248,6 +248,36 @@
         padding: 30px;
         text-align: center;
       }
+      /* Fade-in suave global */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSoft 1.2s ease forwards;
+}
+
+@keyframes fadeInSoft {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.servicio-card, .post {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUpSoft 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes slideUpSoft {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
 
       /* ================================================= */
       /* ================= MOBILE VERSION ================= */
@@ -353,7 +383,37 @@
           color: #704c57; /* un tono más oscuro elegante */
           opacity: 0.8;
         }
+
+        /* Animación nombre doctora */
+.mobile-header-name .nombre-doctora {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeSignature 1.2s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeSignature {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
       }
+
+      /* esto es un cambio global Apertura suve del menu hamburguesa */
+      @keyframes softSlideMenu {
+  from {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
     </style>
   </head>
 
@@ -391,7 +451,7 @@
     </div>
 
     <!-- SOBRE MÍ -->
-    <section id="sobre-mi">
+    <section id="sobre-mi" class="fade-in">
       <img
         src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80"
         alt="Psicóloga"
@@ -409,7 +469,7 @@
     </section>
 
     <!-- SERVICIOS -->
-    <section id="servicios">
+    <section id="servicios" class="fade-in">
       <h2>Servicios</h2>
       <div class="servicios-grid">
         <div class="servicio-card">
@@ -434,7 +494,7 @@
     </section>
 
     <!-- TESTIMONIOS -->
-    <section id="testimonios">
+    <section id="testimonios" class="fade-in">
       <h2>Testimonios</h2>
       <div class="testimonios">
         <div class="testimonio">
@@ -451,7 +511,7 @@
     </section>
 
     <!-- BLOG -->
-    <section id="blog">
+    <section id="blog" class="fade-in">
       <h2>Blog</h2>
       <div class="blog-grid">
         <div class="post">
@@ -487,7 +547,7 @@
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto">
+    <section id="contacto" class="fade-in">
       <h2>Contacto</h2>
       <form>
         <input type="text" placeholder="Tu nombre" />
@@ -520,7 +580,7 @@
           nav.style.display = "none";
         } else {
           nav.style.display = "flex";
-          nav.style.animation = "slideMenu 0.3s ease";
+          nav.style.animation = "softSlideMenu 0.35s ease";
         }
       });
       
